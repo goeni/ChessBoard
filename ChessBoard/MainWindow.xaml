@@ -1,0 +1,243 @@
+﻿<Window x:Class="ChessBoard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessBoard"
+        mc:Ignorable="d"
+        Title="Chess" Height="800" Width="950">
+
+    <Window.Resources>
+        <Style x:Key="Button" TargetType="Button">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="Silver"></Setter>
+            <Setter Property="Width" Value="130"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+        </Style>
+
+        <Style x:Key="ChessboardDark" TargetType="Grid">
+            <Setter Property="Background" Value="CadetBlue"></Setter>
+        </Style>
+        <Style x:Key="ChessboardLight" TargetType="Grid">
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <StackPanel>
+                <Menu DockPanel.Dock="Bottom" Height="50">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="_New Game" />
+                        <MenuItem Header="_Retrieve" />
+                        <MenuItem Header="_Clue" />
+                        <Separator />
+                        <MenuItem Header="_Exit" />
+                    </MenuItem>
+                    <MenuItem Header="_Help">
+                        <MenuItem Header="_Documentation" />
+                    </MenuItem>
+                    <Menu.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#008BEBDB" Offset="1"/>
+                            <GradientStop Color="#65ADBA" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Menu.Background>
+
+                </Menu>
+
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="Red" BorderThickness="4" Margin="20">
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--first row-->
+                <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource ChessboardLight}">
+                    <local:Rook_black></local:Rook_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource ChessboardDark}">
+                    <local:Knight_black></local:Knight_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource ChessboardLight}">
+                    <local:Bishop_black></local:Bishop_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="3" Style="{StaticResource ChessboardDark}">
+                    <local:Queen_black></local:Queen_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="4" Style="{StaticResource ChessboardLight}">
+                    <local:King_black></local:King_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="5" Style="{StaticResource ChessboardDark}">
+                    <local:Bishop_black></local:Bishop_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="6" Style="{StaticResource ChessboardLight}">
+                    <local:Knight_black></local:Knight_black>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="7" Style="{StaticResource ChessboardDark}">
+                    <local:Rook_black></local:Rook_black>
+                </Grid>
+                <!--second row-->
+                <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="3" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="4" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="5" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="6" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="7" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_black></local:Pawn_black>
+                </Grid>
+                <!--third row-->
+                <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="2" Grid.Column="2" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="2" Grid.Column="3" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="2" Grid.Column="4" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="2" Grid.Column="5" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="2" Grid.Column="6" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="2" Grid.Column="7" Style="{StaticResource ChessboardDark}"/>
+                <!--fourth row-->
+                <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="3" Grid.Column="2" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="3" Grid.Column="3" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="3" Grid.Column="4" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="3" Grid.Column="5" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="3" Grid.Column="6" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="3" Grid.Column="7" Style="{StaticResource ChessboardLight}"/>
+                <!--fifth row-->
+                <Grid Grid.Row="4" Grid.Column="0" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="4" Grid.Column="1" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="4" Grid.Column="2" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="4" Grid.Column="3" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="4" Grid.Column="4" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="4" Grid.Column="5" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="4" Grid.Column="6" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="4" Grid.Column="7" Style="{StaticResource ChessboardDark}"/>
+                <!--sexth row-->
+                <Grid Grid.Row="5" Grid.Column="0" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="5" Grid.Column="1" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="5" Grid.Column="2" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="5" Grid.Column="3" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="5" Grid.Column="4" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="5" Grid.Column="5" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="5" Grid.Column="6" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="5" Grid.Column="7" Style="{StaticResource ChessboardLight}"/>
+                <!--7th row-->
+                <Grid Grid.Row="6" Grid.Column="0" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="1" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="2" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="3" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="4" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="5" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="6" Style="{StaticResource ChessboardLight}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="7" Style="{StaticResource ChessboardDark}">
+                    <local:Pawn_white></local:Pawn_white>
+                </Grid>
+                <!--8th row-->
+                <Grid Grid.Row="7" Grid.Column="0" Style="{StaticResource ChessboardDark}">
+                    <local:Rook_white></local:Rook_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="1" Style="{StaticResource ChessboardLight}">
+                    <local:Knight_white></local:Knight_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="2" Style="{StaticResource ChessboardDark}">
+                    <local:Bishop_white></local:Bishop_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="3" Style="{StaticResource ChessboardLight}">
+                    <local:King_white></local:King_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="4" Style="{StaticResource ChessboardDark}">
+                    <local:Queen_white></local:Queen_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="5" Style="{StaticResource ChessboardLight}">
+                    <local:Bishop_white></local:Bishop_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="6" Style="{StaticResource ChessboardDark}">
+                    <local:Knight_white></local:Knight_white>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="7" Style="{StaticResource ChessboardLight}">
+                    <local:Rook_white></local:Rook_white>
+                </Grid>
+            </Grid>
+            </Border>
+            <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="2" Style="{StaticResource Button}" Margin="20,0,20,0">Surrender Game</Button>
+                    <Button Grid.Row="3" Style="{StaticResource Button}" Margin="20,0,20,0">Restart Game</Button>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+</Window>
