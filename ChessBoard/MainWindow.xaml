@@ -26,7 +26,7 @@
         </Style>
 
         <local:CellTypeToCellColorConverter x:Key="CellTypeToColorConverter"></local:CellTypeToCellColorConverter>
-
+        <local:ChessPieceConverter x:Key="ChessPieceConverter"></local:ChessPieceConverter>
     </Window.Resources>
 
     <Grid>
@@ -93,141 +93,365 @@
 
                 <!--first row-->
                     <Grid Grid.Row="0" Grid.Column="0" Background="{Binding Cells[0][0].CellType, Converter={StaticResource CellTypeToColorConverter}}">
-                   
-                    <local:Rook_black></local:Rook_black>
-                </Grid>
+
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][0].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][0].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
                     <Grid Grid.Row="0" Grid.Column="1" Background="{Binding Cells[0][1].CellType, Converter={StaticResource CellTypeToColorConverter}}">
-                    <local:Knight_black></local:Knight_black>
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][1].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][1].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
                 </Grid>
                     <Grid Grid.Row="0" Grid.Column="2" Background="{Binding Cells[0][2].CellType, Converter={StaticResource CellTypeToColorConverter}}">
-                    <local:Bishop_black></local:Bishop_black>
-                </Grid>
-                <Grid Grid.Row="0" Grid.Column="3" Style="{StaticResource ChessboardDark}">
-                    <local:Queen_black></local:Queen_black>
-                </Grid>
-                <Grid Grid.Row="0" Grid.Column="4" Style="{StaticResource ChessboardLight}">
-                    <local:King_black></local:King_black>
-                </Grid>
-                <Grid Grid.Row="0" Grid.Column="5" Style="{StaticResource ChessboardDark}">
-                    <local:Bishop_black></local:Bishop_black>
-                </Grid>
-                <Grid Grid.Row="0" Grid.Column="6" Style="{StaticResource ChessboardLight}">
-                    <local:Knight_black></local:Knight_black>
-                </Grid>
-                <Grid Grid.Row="0" Grid.Column="7" Style="{StaticResource ChessboardDark}">
-                    <local:Rook_black></local:Rook_black>
-                </Grid>
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][2].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][2].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="0" Grid.Column="3" Background="{Binding Cells[0][3].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][3].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][3].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="0" Grid.Column="4" Background="{Binding Cells[0][4].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][4].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][4].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="0" Grid.Column="5" Background="{Binding Cells[0][5].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][5].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][5].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="0" Grid.Column="6" Background="{Binding Cells[0][6].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][6].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][6].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="0" Grid.Column="7" Background="{Binding Cells[0][7].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[0][7].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[0][7].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
                 <!--second row-->
-                <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="3" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="4" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="5" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="6" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="7" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_black></local:Pawn_black>
-                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0" Background="{Binding Cells[1][0].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][0].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][0].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" Background="{Binding Cells[1][1].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][1].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][1].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="2" Background="{Binding Cells[1][2].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][2].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][2].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="3" Background="{Binding Cells[1][3].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][3].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][3].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="4" Background="{Binding Cells[1][4].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][4].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][4].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="5" Background="{Binding Cells[1][5].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][5].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][5].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="6" Background="{Binding Cells[1][6].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][6].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][6].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="1" Grid.Column="7" Background="{Binding Cells[1][7].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[1][7].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[1][7].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
                 <!--third row-->
-                <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="2" Grid.Column="2" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="2" Grid.Column="3" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="2" Grid.Column="4" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="2" Grid.Column="5" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="2" Grid.Column="6" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="2" Grid.Column="7" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="2" Grid.Column="0" Background="{Binding Cells[2][0].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="1" Background="{Binding Cells[2][1].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="2" Background="{Binding Cells[2][2].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="3" Background="{Binding Cells[2][3].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="4" Background="{Binding Cells[2][4].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="5" Background="{Binding Cells[2][5].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="6" Background="{Binding Cells[2][6].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="2" Grid.Column="7" Background="{Binding Cells[2][7].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
                 <!--fourth row-->
-                <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="3" Grid.Column="2" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="3" Grid.Column="3" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="3" Grid.Column="4" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="3" Grid.Column="5" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="3" Grid.Column="6" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="3" Grid.Column="7" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="3" Grid.Column="0" Background="{Binding Cells[3][0].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="1" Background="{Binding Cells[3][1].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="2" Background="{Binding Cells[3][2].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="3" Background="{Binding Cells[3][3].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="4" Background="{Binding Cells[3][4].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="5" Background="{Binding Cells[3][5].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="6" Background="{Binding Cells[3][6].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="3" Grid.Column="7" Background="{Binding Cells[3][7].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
                 <!--fifth row-->
-                <Grid Grid.Row="4" Grid.Column="0" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="4" Grid.Column="1" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="4" Grid.Column="2" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="4" Grid.Column="3" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="4" Grid.Column="4" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="4" Grid.Column="5" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="4" Grid.Column="6" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="4" Grid.Column="7" Style="{StaticResource ChessboardDark}"/>
+                <Grid Grid.Row="4" Grid.Column="0" Background="{Binding Cells[4][0].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="1" Background="{Binding Cells[4][1].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="2" Background="{Binding Cells[4][2].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="3" Background="{Binding Cells[4][3].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="4" Background="{Binding Cells[4][4].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="5" Background="{Binding Cells[4][5].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="6" Background="{Binding Cells[4][6].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="4" Grid.Column="7" Background="{Binding Cells[4][7].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
                 <!--sexth row-->
-                <Grid Grid.Row="5" Grid.Column="0" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="5" Grid.Column="1" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="5" Grid.Column="2" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="5" Grid.Column="3" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="5" Grid.Column="4" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="5" Grid.Column="5" Style="{StaticResource ChessboardLight}"/>
-                <Grid Grid.Row="5" Grid.Column="6" Style="{StaticResource ChessboardDark}"/>
-                <Grid Grid.Row="5" Grid.Column="7" Style="{StaticResource ChessboardLight}"/>
+                <Grid Grid.Row="5" Grid.Column="0" Background="{Binding Cells[5][0].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="1" Background="{Binding Cells[5][1].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="2" Background="{Binding Cells[5][2].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="3" Background="{Binding Cells[5][3].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="4" Background="{Binding Cells[5][4].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="5" Background="{Binding Cells[5][5].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="6" Background="{Binding Cells[5][6].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
+                <Grid Grid.Row="5" Grid.Column="7" Background="{Binding Cells[5][7].CellType, Converter={StaticResource CellTypeToColorConverter}}"/>
                 <!--7th row-->
-                <Grid Grid.Row="6" Grid.Column="0" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="1" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="2" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="3" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="4" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="5" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="6" Style="{StaticResource ChessboardLight}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
-                <Grid Grid.Row="6" Grid.Column="7" Style="{StaticResource ChessboardDark}">
-                    <local:Pawn_white></local:Pawn_white>
-                </Grid>
+                <Grid Grid.Row="6" Grid.Column="0" Background="{Binding Cells[6][0].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][0].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][0].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="1" Background="{Binding Cells[6][1].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][1].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][1].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="2" Background="{Binding Cells[6][2].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][2].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][2].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="3" Background="{Binding Cells[6][3].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][3].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][3].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="4" Background="{Binding Cells[6][4].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][4].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][4].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="5" Background="{Binding Cells[6][5].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][5].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][5].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="6" Background="{Binding Cells[6][6].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][6].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][6].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="6" Grid.Column="7" Background="{Binding Cells[6][7].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[6][7].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[6][7].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
                 <!--8th row-->
-                <Grid Grid.Row="7" Grid.Column="0" Style="{StaticResource ChessboardDark}">
-                    <local:Rook_white></local:Rook_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="1" Style="{StaticResource ChessboardLight}">
-                    <local:Knight_white></local:Knight_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="2" Style="{StaticResource ChessboardDark}">
-                    <local:Bishop_white></local:Bishop_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="3" Style="{StaticResource ChessboardLight}">
-                    <local:King_white></local:King_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="4" Style="{StaticResource ChessboardDark}">
-                    <local:Queen_white></local:Queen_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="5" Style="{StaticResource ChessboardLight}">
-                    <local:Bishop_white></local:Bishop_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="6" Style="{StaticResource ChessboardDark}">
-                    <local:Knight_white></local:Knight_white>
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="7" Style="{StaticResource ChessboardLight}">
-                    <local:Rook_white></local:Rook_white>
-                </Grid>
+                <Grid Grid.Row="7" Grid.Column="0" Background="{Binding Cells[7][0].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][0].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][0].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="1" Background="{Binding Cells[7][1].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][1].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][1].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="2" Background="{Binding Cells[7][2].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][2].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][2].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="3" Background="{Binding Cells[7][3].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][3].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][3].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="4" Background="{Binding Cells[7][4].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][4].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][4].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="5" Background="{Binding Cells[7][5].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][5].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][5].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="6" Background="{Binding Cells[7][6].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][6].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][6].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                <Grid Grid.Row="7" Grid.Column="7" Background="{Binding Cells[7][7].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                        <Image>
+                            <Image.Source>
+                                <MultiBinding Converter="{StaticResource ChessPieceConverter}">
+                                    <Binding Path="Cells[7][7].ChessPieceType"></Binding>
+                                    <Binding Path="Cells[7][7].ChessPieceColor"></Binding>
+                                </MultiBinding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
             </Grid>
             </Border>
             <Grid Grid.Column="1">

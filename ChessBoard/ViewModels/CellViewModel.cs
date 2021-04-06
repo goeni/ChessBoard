@@ -1,6 +1,10 @@
 using ChessBoard.ViewModels.Enums;
 using ChessBoard.ViewModels.IViewModels;
 
+/**
+ * @author ${Fabian Falco, Simon Gönitzer}
+ *
+ */
 public class CellViewModel : ICellViewModel
 {
     private ECellType _cellType;

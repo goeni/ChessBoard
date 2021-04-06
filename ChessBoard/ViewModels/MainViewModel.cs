@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Documents;
-using System.Windows.Media.Media3D;
+﻿using System.Collections.Generic;
+
+
+/**
+ * @author ${Fabian Falco, Simon Gönitzer}
+ *
+ */
 
 namespace ChessBoard.ViewModels
 {
