@@ -8,6 +8,7 @@
         Title="Chess" Height="800" Width="950">
 
     <Window.Resources>
+
         <Style x:Key="Button" TargetType="Button">
             <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
@@ -23,6 +24,9 @@
         <Style x:Key="ChessboardLight" TargetType="Grid">
             <Setter Property="Background" Value="White"></Setter>
         </Style>
+
+        <local:CellTypeToCellColorConverter x:Key="CellTypeToColorConverter"></local:CellTypeToCellColorConverter>
+
     </Window.Resources>
 
     <Grid>
@@ -88,13 +92,14 @@
                 </Grid.ColumnDefinitions>
 
                 <!--first row-->
-                <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource ChessboardLight}">
+                    <Grid Grid.Row="0" Grid.Column="0" Background="{Binding Cells[0][0].CellType, Converter={StaticResource CellTypeToColorConverter}}">
+                   
                     <local:Rook_black></local:Rook_black>
                 </Grid>
-                <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource ChessboardDark}">
+                    <Grid Grid.Row="0" Grid.Column="1" Background="{Binding Cells[0][1].CellType, Converter={StaticResource CellTypeToColorConverter}}">
                     <local:Knight_black></local:Knight_black>
                 </Grid>
-                <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource ChessboardLight}">
+                    <Grid Grid.Row="0" Grid.Column="2" Background="{Binding Cells[0][2].CellType, Converter={StaticResource CellTypeToColorConverter}}">
                     <local:Bishop_black></local:Bishop_black>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="3" Style="{StaticResource ChessboardDark}">

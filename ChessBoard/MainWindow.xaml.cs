@@ -1,5 +1,6 @@
 ﻿
 using System.Windows;
+using ChessBoard.ViewModels;
 
 /**
  * @author ${Fabian Falco, Simon Gönitzer}
@@ -15,6 +16,7 @@ namespace ChessBoard
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
             
         }
     }
